@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+  }
+  
+  .custom-slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 100%;
+    background: transparent;
+  }
+  
+  .custom-slider::-ms-track {
+    height: 100%;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px; 
+    height: 30px;
+    background: #ff9393;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 20vh;
+  }
+
