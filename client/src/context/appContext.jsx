@@ -13,7 +13,7 @@ const AppContextProvider = (props)=>{
     const[image, setImage]=useState(false)
     const [resultImage, setResultImage]=useState(false)
 
-    const backendURL = import.meta.env.VITE_BACKEND_URL
+    const backendURL = import.meta.env.VITE_BACKEND_URL ||'http://localhost:4000';
     const navigate = useNavigate()
 
     const {getToken} = useAuth()
