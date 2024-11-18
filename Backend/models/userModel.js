@@ -23,7 +23,9 @@ const userSchema = new mongoose.Schema({
     },
     creditBalance:{
         type:Number,
-        default:10
+        default:10,
+        required:true,
+
     }
 })
 

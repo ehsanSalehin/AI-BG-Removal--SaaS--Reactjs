@@ -11,7 +11,7 @@ const Buy = () => {
 
   const {backendURL, loadCreditsData} = useContext(AppContext)
   const navigate = useNavigate()
-  const {getToken} = useAuth
+  const {sessionId, getToken} = useAuth()
 
   const initPay = async()=>{
     const option ={
