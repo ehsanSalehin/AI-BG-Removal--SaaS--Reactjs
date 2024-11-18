@@ -20,7 +20,7 @@ const clerkWebhooks =async(req, res)=>{
                     lastName: data.last_name,
                     photo: data.image_url
                 }
-                await userModel.craete(userData)
+                await userModel.create(userData)
                 res.json({})
                 break;
             }
@@ -45,9 +45,27 @@ const clerkWebhooks =async(req, res)=>{
         }
     }catch(err){
         console.log(err.message)
-        res.json({success:false, message:err.message})
+        res.status(500).json({success:false, message:err.message})
+    }
+}
+
+//credits
+ 
+const userCredits=async(req,res)=>{
+    try{
+
+        const {clerkId} = req.body
+        const userData = await userModel.findOne({clerkId})
+        res.json({success:true, credits:userData.creditBalance})
+    }catch(err){
+        console.log(err.message)
+        res.status(500).json({success:false, message:err.message})
     }
 }
 
 
-export {clerkWebhooks}
+
+
+
+
+export {clerkWebhooks, userCredits}

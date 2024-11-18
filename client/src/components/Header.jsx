@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import upload from '../assets/upload.png'
 import qq from '../assets/qq.jpeg'
+import { AppContext } from '../context/appContext'
 
 const Header = () => {
+
+    const {removeBg} = useContext(AppContext)
+
   return (
     <div className='flex items-center justify-between max-sm:flex-col-reverse gay-y-10 px-4 mt-10 lg:px-44 sm:mt-20'>
         <div >
@@ -10,7 +14,7 @@ const Header = () => {
                 Making Backgrounds <br className='max-md:hidden' /> <span className='bg-gradient-to-r from-[#65c4f0] to-[#bd8803] bg-clip-text text-transparent'>Disappear </span> Like<br className='max-md:hidden'/> Magic!
             </h1>
             <div>
-                <input type="file" id="uploadImage" hidden />
+                <input onChange={e=>removeBg(e.target.files[0])} accept='image/*' type="file" id="uploadImage" hidden  />
                 <label className='inline-flex items-center justify-center gap-1 px-4 py-2 rounded-full cursor-pointer 
              bg-gradient-to-r from-[#65c4f0] to-[#bd8803] 
              text-white font-semibold
