@@ -33,7 +33,7 @@ const Result = () => {
           </div>
         </div>
 
-        {resultImage&&<div className='flex justify-center sm:justify-end items-center flex-wrap gap-4 mt-6'>
+        {resultImage||<div className='flex justify-center sm:justify-end items-center flex-wrap gap-4 mt-6'>
           <button className='px-8 py-2.5 text-gray-600 text-sm border border-pink-400 rounded-full hover:scale-105 transition-all duration-300'>Upload another image</button>
           <a href={resultImage} download className='px-8 py-2.5 text-white text-sm bg-gradient-to-r from-[#65c4f0] to-[#bd8803] rounded-full hover:scale-105 transition-all duration-300' href=''>Download image</a>
         </div>}
